@@ -13,7 +13,7 @@ export default function Home() {
           <br />
           <h1 className={title()}>something amazing!</h1>
           <BlurryBlob
-            className="rounded-xl opacity-45"
+            className="opacity-45"
             firstBlobColor="bg-fuchsia-400"
             secondBlobColor="bg-blue-400"
           />

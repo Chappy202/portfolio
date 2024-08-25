@@ -14,14 +14,14 @@ export const BlurryBlob: FC<BlobProps> = ({ className, firstBlobColor, secondBlo
       <div className="relative w-full max-w-lg">
         <div
           className={clsx(
-            'absolute -right-28 -top-28 h-72 w-72 animate-pop-blob rounded-sm bg-blue-400 p-8 opacity-45 mix-blend-multiply blur-3xl filter',
+            'absolute -right-24 -top-28 h-72 w-72 animate-pop-blob rounded-full bg-blue-400 p-8 opacity-45 mix-blend-multiply blur-3xl filter',
             className,
             firstBlobColor
           )}
         />
         <div
           className={clsx(
-            'absolute -left-38 -top-64 h-72 w-72 animate-pop-blob rounded-sm bg-purple-400 p-8 opacity-45 mix-blend-multiply blur-3xl filter',
+            'absolute -left-38 -top-64 h-72 w-72 animate-pop-blob rounded-full bg-purple-400 p-8 opacity-45 mix-blend-multiply blur-3xl filter',
             className,
             secondBlobColor
           )}
