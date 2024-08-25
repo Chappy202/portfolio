@@ -1,53 +1,28 @@
-import { Link } from '@nextui-org/link';
-import { Snippet } from '@nextui-org/snippet';
-import { Code } from '@nextui-org/code';
-import { button as buttonStyles } from '@nextui-org/theme';
-
-import { siteConfig } from '@/config/site';
-import { title, subtitle } from '@/components/primitives';
-import { GithubIcon } from '@/components/icons';
+import { title } from '@/components/primitives';
+import { BlurryBlob } from '@/components/animated/background/blurry-blob';
+import { Dot } from '@/components/background/dot';
+import ShimmerButton from '@/components/ui/buttons/shimmer-button';
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-xl text-center justify-center">
-        <h1 className={title()}>Make&nbsp;</h1>
-        <h1 className={title({ color: 'violet' })}>beautiful&nbsp;</h1>
-        <br />
-        <h1 className={title()}>websites regardless of your design experience.</h1>
-        <h2 className={subtitle({ class: 'mt-4' })}>
-          Beautiful, fast and modern React UI library.
-        </h2>
-      </div>
-
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: 'primary',
-            radius: 'full',
-            variant: 'shadow',
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: 'bordered', radius: 'full' })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
-      </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
+      <Dot className="w-full z-0 flex flex-col justify-center items-center" spacing={10}>
+        <div className="max-w-xl inline-block text-center justify-center mt-32">
+          <h1 className={title()}>Make&nbsp;</h1>
+          <h1 className={title({ color: 'violet' })}>beautiful&nbsp;</h1>
+          <br />
+          <h1 className={title()}>websites regardless of your design experience.</h1>
+          <BlurryBlob
+            className="rounded-xl opacity-45"
+            firstBlobColor="bg-fuchsia-400"
+            secondBlobColor="bg-blue-400"
+          />
+        </div>
+      </Dot>
+      <div className="flex gap-3 mb-[1000px]">
+        <ShimmerButton borderRadius="50px" shimmerDuration="1.5s" shimmerSize="0.15em">
+          Get in touch
+        </ShimmerButton>
       </div>
     </section>
   );
