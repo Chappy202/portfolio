@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </Dot>
       <div className="flex gap-3 mb-[1000px]">
-        <ShimmerButton borderRadius="50px" shimmerDuration="1.5s" shimmerSize="0.15em">
+        <ShimmerButton borderRadius="50px" shimmerSize="0.1em">
           Get in touch
         </ShimmerButton>
       </div>
