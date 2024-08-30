@@ -34,10 +34,7 @@ export const siteConfig = {
   ],
   links: {
     github: 'https://github.com/Chappy202',
-    twitter: 'https://twitter.com/getnextui',
-    docs: 'https://nextui.org',
-    discord: 'https://discord.gg/9b6yyZKmH4',
-    sponsor: 'https://patreon.com/jrgarciadev',
     linkedin: 'https://www.linkedin.com/in/jj-badenhorst/',
+    unsplash: 'https://unsplash.com/@chappy202',
   },
 };

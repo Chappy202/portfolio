@@ -13,7 +13,7 @@ import NextLink from 'next/link';
 import clsx from 'clsx';
 
 import { siteConfig } from '@/config/site';
-import { GithubIcon, LinkedInIcon, Logo } from '@/components/icons';
+import { GithubIcon, LinkedInIcon, Logo, UnsplashIcon } from '@/components/icons';
 
 export const Navbar = () => {
   return (
@@ -60,6 +60,9 @@ export const Navbar = () => {
           <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
             <LinkedInIcon className="text-default-500" />
           </Link>
+          <Link isExternal aria-label="Unsplash" href={siteConfig.links.unsplash}>
+            <UnsplashIcon className="text-default-500" />
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
@@ -69,6 +72,9 @@ export const Navbar = () => {
         </Link>
         <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
           <LinkedInIcon className="text-default-500" />
+        </Link>
+        <Link isExternal aria-label="Unsplash" href={siteConfig.links.unsplash}>
+          <UnsplashIcon className="text-default-500" />
         </Link>
         <NavbarMenuToggle />
       </NavbarContent>

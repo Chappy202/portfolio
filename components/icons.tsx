@@ -61,6 +61,19 @@ export const LinkedInIcon: React.FC<IconSvgProps> = ({ size = 24, width, height,
   );
 };
 
+export const UnsplashIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, ...props }) => {
+  return (
+    <svg height={size || height} viewBox="0 0 448 512" width={size || width} {...props}>
+      <path
+        clipRule="evenodd"
+        d="M448 230.2V480H0V230.2H141.1V355.1H306.9V230.2zM306.9 32H141.1V156.9H306.9z"
+        fill="currentColor"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
+
 export const MoonFilledIcon = ({ size = 24, width, height, ...props }: IconSvgProps) => (
   <svg
     aria-hidden="true"
