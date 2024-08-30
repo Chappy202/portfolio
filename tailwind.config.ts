@@ -59,6 +59,7 @@ const config: Config = {
         },
       },
       colors: {
+        background: '#101010',
         filter: {
           'blur-20': 'blur(20px)',
           'blur-25': 'blur(25px)',
