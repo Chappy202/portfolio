@@ -12,29 +12,29 @@ import { link as linkStyles } from '@nextui-org/theme';
 import NextLink from 'next/link';
 import clsx from 'clsx';
 
-import ScrollProgress from './ui/scroll-progress';
-
 import { siteConfig } from '@/config/site';
 import { ThemeSwitch } from '@/components/theme-switch';
-import { TwitterIcon, GithubIcon, DiscordIcon, Logo } from '@/components/icons';
+import { GithubIcon, LinkedInIcon, Logo } from '@/components/icons';
 
 export const Navbar = () => {
   return (
     <NextUINavbar
-      className="bg-transparent"
-      disableScrollHandler={true}
+      className="bg-transparent container"
+      classNames={{
+        wrapper: 'mt-5 rounded-lg border border-zinc-800 backdrop-blur-md bg-zinc-900/25',
+      }}
       isBlurred={false}
       maxWidth="xl"
       position="sticky"
       shouldHideOnScroll={false}
     >
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
-          </NextLink>
-        </NavbarBrand>
+      <NavbarBrand as="li" className="gap-3 max-w-fit">
+        <NextLink className="flex justify-start items-center gap-1" href="/">
+          <Logo />
+          <p className="font-bold text-inherit">ACME</p>
+        </NextLink>
+      </NavbarBrand>
+      <NavbarContent className="basis-1/5 sm:basis-full" justify="center">
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map(item => (
             <NavbarItem key={item.href}>
@@ -55,16 +55,12 @@ export const Navbar = () => {
 
       <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="end">
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>
-          <ThemeSwitch />
+          <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
+            <LinkedInIcon className="text-default-500" />
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
@@ -97,7 +93,6 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
-      <ScrollProgress className="top-[65px]" />
     </NextUINavbar>
   );
 };

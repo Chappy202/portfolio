@@ -25,7 +25,7 @@ export default function Home() {
           Get in touch
         </ShimmerButton>
       </div>
-      <div className={'flex h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row  mb-[1000px]'}>
+      <div className={'flex h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row'}>
         <MagicCard
           className="cursor-pointer border-none flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
           gradientColor={'#262626'}
