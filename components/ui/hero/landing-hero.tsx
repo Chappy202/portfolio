@@ -8,6 +8,7 @@ import ShimmerButton from '../buttons/shimmer-button';
 
 import { title } from '@/components/primitives';
 import { BackgroundParticles } from '@/components/animated/background/background-particles';
+import PulsatingBadge from '@/components/animated/badge/pulsating-badge';
 
 interface HeroLandingProps {
   className?: string;
@@ -40,7 +41,7 @@ export const HeroLanding: FC<HeroLandingProps> = ({ className }) => {
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
           Software Engineer crafting web apps, mobile apps, backend systems & fintech solutions.
         </p>
-        <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-8">
+        <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-2">
           Currently at{' '}
           <Link
             className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
@@ -52,6 +53,7 @@ export const HeroLanding: FC<HeroLandingProps> = ({ className }) => {
           </Link>
           . Based in South Africa.
         </p>
+        <PulsatingBadge className="mb-12" text="Available for select freelance opportunities" />
         <div className="flex gap-3">
           <ShimmerButton borderRadius="50px" shimmerSize="0.1em">
             Get in touch

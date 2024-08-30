@@ -57,6 +57,12 @@ const config: Config = {
             transform: 'translate(calc(100cqw - 100%), 0)',
           },
         },
+        'slow-ping': {
+          '75%, 100%': {
+            transform: 'scale(2)',
+            opacity: '0',
+          },
+        },
       },
       colors: {
         background: '#101010',
@@ -71,6 +77,7 @@ const config: Config = {
         'pop-blob': 'pop-blob 5s infinite',
         'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
         slide: 'slide var(--speed) ease-in-out infinite alternate',
+        'slow-ping': 'slow-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
     },
   },
