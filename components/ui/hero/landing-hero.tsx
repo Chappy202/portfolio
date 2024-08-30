@@ -44,7 +44,7 @@ export const HeroLanding: FC<HeroLandingProps> = ({ className }) => {
         <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-2">
           Currently at{' '}
           <Link
-            className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+            className="text-foreground hover:text-zinc-500 dark:text-foreground dark:hover:text-zinc-400 transition-colors"
             href="https://entelect.co.za"
             rel="noopener noreferrer"
             target="_blank"

@@ -11,7 +11,7 @@ const PulsatingBadge: React.FC<PulsatingBadgeProps> = ({ text, className }) => {
     <div
       className={clsx(
         className,
-        'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-teal-800 dark:bg-zinc-900 dark:text-slate-300'
+        'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-teal-800 dark:bg-zinc-900 dark:text-neutral-300'
       )}
     >
       <span className="flex h-2 w-2 mr-2">
