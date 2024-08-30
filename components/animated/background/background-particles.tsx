@@ -90,6 +90,10 @@ export const BackgroundParticles: React.FC<ParticlesProps> = ({
     initCanvas();
   }, [refresh]);
 
+  useEffect(() => {
+    initCanvas();
+  }, [quantity]);
+
   const initCanvas = () => {
     resizeCanvas();
     drawParticles();
@@ -126,8 +130,8 @@ export const BackgroundParticles: React.FC<ParticlesProps> = ({
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0;
-      canvasSize.current.w = canvasContainerRef.current.offsetWidth;
-      canvasSize.current.h = canvasContainerRef.current.offsetHeight;
+      canvasSize.current.w = canvasContainerRef.current.clientWidth;
+      canvasSize.current.h = canvasContainerRef.current.clientHeight;
       canvasRef.current.width = canvasSize.current.w * dpr;
       canvasRef.current.height = canvasSize.current.h * dpr;
       canvasRef.current.style.width = `${canvasSize.current.w}px`;
@@ -255,8 +259,8 @@ export const BackgroundParticles: React.FC<ParticlesProps> = ({
   };
 
   return (
-    <div ref={canvasContainerRef} aria-hidden="true" className={className}>
-      <canvas ref={canvasRef} className="h-full w-full" />
+    <div ref={canvasContainerRef} aria-hidden="true" className={`${className} w-full h-full`}>
+      <canvas ref={canvasRef} style={{ display: 'block', width: '100%', height: '100%' }} />
     </div>
   );
 };
