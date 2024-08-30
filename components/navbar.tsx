@@ -20,7 +20,7 @@ export const Navbar = () => {
     <NextUINavbar
       className="bg-transparent container"
       classNames={{
-        wrapper: 'mt-5 rounded-lg border border-zinc-800 backdrop-blur-md bg-zinc-900/25',
+        wrapper: 'mt-5 rounded-2xl border border-zinc-800 backdrop-blur-md bg-zinc-900/25',
       }}
       isBlurred={false}
       maxWidth="xl"
