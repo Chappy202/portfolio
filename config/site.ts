@@ -35,6 +35,6 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/Chappy202',
     linkedin: 'https://www.linkedin.com/in/jj-badenhorst/',
-    unsplash: 'https://unsplash.com/@chappy202',
+    unsplash: 'https://unsplash.com/@jjbadenhorst',
   },
 };
