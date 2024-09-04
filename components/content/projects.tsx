@@ -78,19 +78,19 @@ const data = [
   {
     category: 'Mobile Development',
     title: 'Warranty Wallet - Mobile app for managing warranties',
-    src: 'https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/assets/projects/warranty_wallet-mock.webp',
     content: <DummyContent />,
   },
   {
     category: 'Backend Development',
     title: 'Headless Auth Service - Open-source authentication service',
-    src: 'https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/assets/projects/auth-api-mock.webp',
     content: <DummyContent />,
   },
   {
     category: 'Web Development',
     title: 'SME embedded HVAC Management dashboard',
-    src: 'https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/assets/projects/sme-mock.webp',
     content: <DummyContent />,
   },
 ];
