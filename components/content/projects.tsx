@@ -59,19 +59,19 @@ const data = [
   {
     category: 'Web Development',
     title: 'Partscorp Online store',
-    src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/assets/projects/partscorp-mock.webp',
     content: <DummyContent />,
   },
   {
-    category: 'Full Stack',
+    category: 'Full Stack / Mobile Development',
     title: 'FBCranes - Crane inspection and asset management',
-    src: 'https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/assets/projects/fbcranes-mock.webp',
     content: <DummyContent />,
   },
   {
     category: 'Web Development',
     title: 'Jaron Grobler - Dynamic videography portfolio',
-    src: 'https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/assets/projects/jaron-mock.webp',
     content: <DummyContent />,
   },
 
