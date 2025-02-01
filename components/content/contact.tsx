@@ -6,9 +6,10 @@ import { Mail, MapPin, Linkedin } from 'lucide-react';
 
 import { ContactForm } from '../ui/contact/contact-form';
 import { FadeInSection } from '../fade-in-section';
-import { GithubIcon } from '../icons';
+import { GithubIcon, UnsplashIcon } from '../icons';
 
 import { cn } from '@/lib/utils';
+import { siteConfig } from '@/config/site';
 
 interface ContactProps {
   className?: string;
@@ -30,15 +31,15 @@ const ContactInfo = () => (
         <Mail className="w-5 h-5 text-neutral-700 dark:text-neutral-300" />
         <Link
           className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200"
-          href="mailto:hello@example.com"
+          href="mailto:hello@oxibux.com"
         >
-          hello@example.com
+          hello@oxibux.com
         </Link>
       </div>
       <div className="flex items-center gap-3">
         <MapPin className="w-5 h-5 text-neutral-700 dark:text-neutral-300" />
         <span className="text-sm text-neutral-600 dark:text-neutral-400">
-          Cape Town, South Africa
+          Pretoria, South Africa
         </span>
       </div>
     </div>
@@ -49,16 +50,23 @@ const ContactInfo = () => (
         <Link
           isExternal
           className="text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
-          href="https://github.com/yourusername"
+          href={siteConfig.links.github}
         >
           <GithubIcon className="w-5 h-5" />
         </Link>
         <Link
           isExternal
           className="text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
-          href="https://linkedin.com/in/yourusername"
+          href={siteConfig.links.linkedin}
         >
           <Linkedin className="w-5 h-5" />
+        </Link>
+        <Link
+          isExternal
+          className="text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+          href={siteConfig.links.unsplash}
+        >
+          <UnsplashIcon className="w-5 h-5" />
         </Link>
       </div>
     </div>
