@@ -8,6 +8,7 @@ import { Providers } from './providers';
 import { siteConfig } from '@/config/site';
 import { fontSans } from '@/config/fonts';
 import { Navbar } from '@/components/navbar';
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="relative flex flex-col">
             <Navbar />
             <main className="container mx-auto max-w-7xl flex-grow">{children}</main>
+            <ScrollToTop />
           </div>
         </Providers>
       </body>
