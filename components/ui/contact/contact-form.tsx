@@ -177,6 +177,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
             onVerify={handleVerify}
             onExpire={() => setCaptchaToken(null)}
+            theme="dark"
           />
         </div>
 
