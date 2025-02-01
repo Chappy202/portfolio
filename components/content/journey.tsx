@@ -236,7 +236,7 @@ export const Journey: FC<JourneyProps> = ({ className }) => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full pb-16">
       <Timeline data={data} />
     </div>
   );

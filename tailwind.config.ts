@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-import { heroui } from "@heroui/theme";
+import { heroui } from '@heroui/theme';
 
 const config: Config = {
   content: [
@@ -8,7 +8,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{ts,tsx}',
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
+    './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {
@@ -25,18 +25,34 @@ const config: Config = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
         },
         'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
         },
         'pop-blob': {
-          '0%': { transform: 'scale(1)' },
-          '33%': { transform: 'scale(1.2)' },
-          '66%': { transform: 'scale(0.8)' },
-          '100%': { transform: 'scale(1)' },
+          '0%': {
+            transform: 'scale(1)',
+          },
+          '33%': {
+            transform: 'scale(1.2)',
+          },
+          '66%': {
+            transform: 'scale(0.8)',
+          },
+          '100%': {
+            transform: 'scale(1)',
+          },
         },
         'spin-around': {
           '0%': {
@@ -78,10 +94,13 @@ const config: Config = {
         'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
         slide: 'slide var(--speed) ease-in-out infinite alternate',
         'slow-ping': 'slow-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+        shine: 'shine 3s linear infinite',
+        spin: 'spin 2s linear infinite',
+        'border-travel': 'border-travel 4s linear infinite',
       },
     },
   },
-  darkMode: 'class',
+  darkMode: ['class'],
   plugins: [heroui(), require('tailwindcss-animate')],
   prefix: '',
 };
