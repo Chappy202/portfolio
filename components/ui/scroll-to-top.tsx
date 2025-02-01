@@ -40,7 +40,7 @@ export function ScrollToTop() {
       aria-label="Scroll to top"
       className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg"
       size="lg"
-      variant="ghost"
+      variant="light"
       onPress={scrollToTop}
     >
       <ArrowUp className="h-4 w-4" />
