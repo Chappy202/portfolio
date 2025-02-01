@@ -17,6 +17,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [isCaptchaLoading, setIsCaptchaLoading] = useState(true);
   const captchaRef = useRef<HCaptcha>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -172,11 +173,17 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
         )}
 
         <div className="w-full">
+          {isCaptchaLoading && (
+            <div className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
+              Loading captcha...
+            </div>
+          )}
           <HCaptcha
             ref={captchaRef}
             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
             onVerify={handleVerify}
             onExpire={() => setCaptchaToken(null)}
+            onLoad={() => setIsCaptchaLoading(false)}
             theme="dark"
           />
         </div>
