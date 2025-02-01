@@ -18,7 +18,7 @@ import { GithubIcon, LinkedInIcon, Logo, UnsplashIcon } from '@/components/icons
 export const Navbar = () => {
   return (
     <NextUINavbar
-      className="bg-transparent container"
+      className="bg-transparent container z-50"
       classNames={{
         wrapper: 'mt-5 rounded-2xl border border-zinc-800 backdrop-blur-md bg-zinc-900/25',
       }}

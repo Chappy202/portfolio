@@ -39,7 +39,7 @@ const TechCard = memo(({ tech }: { tech: TechItem }) => {
       initial={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
     >
-      <ShineBorder className="min-h-0 min-w-0 w-full">
+      <ShineBorder className="min-h-0 min-w-0 w-full p-[1]">
         <CardContent tech={tech} />
       </ShineBorder>
     </motion.div>

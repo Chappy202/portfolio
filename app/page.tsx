@@ -3,6 +3,7 @@ import { Projects } from '@/components/content/projects';
 import { HeroLanding } from '@/components/ui/hero/landing-hero';
 import { Blog } from '@/components/content/blog';
 import { TechStack } from '@/components/content/tech-stack';
+import { Footer } from '@/components/footer';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Journey />
         <Blog className="mt-20" />
       </section>
+      <Footer />
     </>
   );
 }
