@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 
 import { Card, Carousel } from '../ui/carousel/apple-cards-carousel';
+import { FadeInSection } from '../fade-in-section';
 
 interface ProjectsProps {
   className?: string;
@@ -46,12 +47,12 @@ export const Projects: FC<ProjectsProps> = ({ className }) => {
   const cards = data.map((card, index) => <Card key={card.src} card={card} index={index} />);
 
   return (
-    <div className={clsx('relative flex flex-col h-full w-full py-28 pb-12', className)}>
+    <FadeInSection className={clsx('relative flex flex-col h-full w-full py-28 pb-12', className)}>
       <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         My latest projects
       </h2>
       <Carousel items={cards} />
-    </div>
+    </FadeInSection>
   );
 };
 

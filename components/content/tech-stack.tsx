@@ -1,7 +1,9 @@
 'use client';
 
-import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react';
-import { memo, useCallback, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import { memo, useCallback, useMemo, useState } from 'react';
+
+import { FadeInSection } from '../fade-in-section';
 
 import { JavaIcon } from '@/components/icons/tech/java';
 import ShineBorder from '@/components/shine-border';
@@ -62,7 +64,6 @@ const TechGrid = memo(({ techs }: { techs: TechItem[] }) => {
 TechGrid.displayName = 'TechGrid';
 
 const TechStack = memo(({ className }: TechStackProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState<'language' | 'framework' | 'tool'>(
     'language'
   );
@@ -118,13 +119,6 @@ const TechStack = memo(({ className }: TechStackProps) => {
     { name: 'Illustrator', category: 'tool' },
   ];
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
   const filteredTech = useMemo(
     () => technologies.filter(tech => tech.category === activeCategory),
     [activeCategory]
@@ -135,8 +129,8 @@ const TechStack = memo(({ className }: TechStackProps) => {
   }, []);
 
   return (
-    <div ref={containerRef} className={cn('w-full max-w-7xl mx-auto px-4 pb-16', className)}>
-      <motion.div className="space-y-8" style={{ opacity }}>
+    <FadeInSection className={cn('w-full max-w-7xl mx-auto px-4 pb-16', className)}>
+      <div className="space-y-8">
         <div>
           <h2 className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans mb-4">
             Tech Stack
@@ -154,8 +148,8 @@ const TechStack = memo(({ className }: TechStackProps) => {
             <TechGrid key={activeCategory} techs={filteredTech} />
           </AnimatePresence>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </FadeInSection>
   );
 });
 

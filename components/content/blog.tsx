@@ -4,6 +4,8 @@ import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { FadeInSection } from '../fade-in-section';
+
 import { cn } from '@/lib/utils';
 
 interface BlogProps {
@@ -82,7 +84,7 @@ export const Blog: FC<BlogProps> = ({ className }) => {
   const regularPosts = blogPosts.filter(post => !post.isFeatured);
 
   return (
-    <div className={cn('w-full max-w-7xl mx-auto px-4', className)}>
+    <FadeInSection className={cn('w-full max-w-7xl mx-auto px-4', className)}>
       <h2 className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans mb-12">
         Latest Articles
       </h2>
@@ -165,6 +167,6 @@ export const Blog: FC<BlogProps> = ({ className }) => {
           ))}
         </div>
       </div>
-    </div>
+    </FadeInSection>
   );
 };

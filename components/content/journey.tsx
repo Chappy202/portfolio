@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Timeline } from '../ui/timeline/timeline';
+import { FadeInSection } from '../fade-in-section';
 
 import { cn } from '@/lib/utils';
 
@@ -236,8 +237,8 @@ export const Journey: FC<JourneyProps> = ({ className }) => {
   ];
 
   return (
-    <div className="w-full pb-16">
+    <FadeInSection className="w-full pb-16">
       <Timeline data={data} />
-    </div>
+    </FadeInSection>
   );
 };
