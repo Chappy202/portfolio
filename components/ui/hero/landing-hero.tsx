@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 
 import ShimmerButton from '../buttons/shimmer-button';
@@ -16,25 +16,20 @@ interface HeroLandingProps {
 }
 
 export const HeroLanding: FC<HeroLandingProps> = ({ className }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div
       className={clsx('relative flex flex-col gap-4 items-center h-full w-full py-28', className)}
     >
       <div className="absolute inset-0 z-0 h-full">
-        <BackgroundParticles key={isMobile ? 'mobile' : 'desktop'} quantity={isMobile ? 50 : 150} />
+        <BackgroundParticles quantity={150} />
       </div>
       <div className="relative z-10 max-w-xl flex flex-col text-center items-center justify-center flex-grow">
         <h1 className={`${title()} text-4xl md:text-5xl lg:text-6xl mb-4`}>I&apos;m JJ 👋</h1>
@@ -55,7 +50,7 @@ export const HeroLanding: FC<HeroLandingProps> = ({ className }) => {
         </p>
         <PulsatingBadge className="mb-12" text="Available for select freelance opportunities" />
         <div className="flex gap-3">
-          <ShimmerButton borderRadius="50px" shimmerSize="0.1em">
+          <ShimmerButton borderRadius="50px" shimmerSize="0.1em" onClick={scrollToContact}>
             Get in touch
           </ShimmerButton>
         </div>

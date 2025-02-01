@@ -6,9 +6,10 @@ import { ReactNode, useRef } from 'react';
 interface FadeInSectionProps {
   children: ReactNode;
   className?: string;
+  id?: string;
 }
 
-export const FadeInSection = ({ children, className }: FadeInSectionProps) => {
+export const FadeInSection = ({ children, className, id }: FadeInSectionProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -18,7 +19,7 @@ export const FadeInSection = ({ children, className }: FadeInSectionProps) => {
   const opacity = useTransform(scrollYProgress, [0, 0.25, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <div ref={containerRef} className={className}>
+    <div ref={containerRef} className={className} id={id}>
       <motion.div style={{ opacity }}>{children}</motion.div>
     </div>
   );

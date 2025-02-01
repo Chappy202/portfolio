@@ -84,7 +84,7 @@ export const Blog: FC<BlogProps> = ({ className }) => {
   const regularPosts = blogPosts.filter(post => !post.isFeatured);
 
   return (
-    <FadeInSection className={cn('w-full max-w-7xl mx-auto px-4', className)}>
+    <FadeInSection className={cn('w-full max-w-7xl mx-auto px-4 pb-16', className)}>
       <h2 className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans mb-12">
         Latest Articles
       </h2>

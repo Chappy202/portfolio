@@ -90,7 +90,6 @@ const TechStack = memo(({ className }: TechStackProps) => {
     // Frameworks
     { name: 'ReactJS', category: 'framework' },
     { name: 'NextJS', category: 'framework' },
-    { name: 'VueJS', category: 'framework' },
     { name: 'Spring Boot', category: 'framework' },
     { name: '.NET', category: 'framework' },
     { name: 'NestJS', category: 'framework' },

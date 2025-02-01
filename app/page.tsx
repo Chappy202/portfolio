@@ -4,6 +4,7 @@ import { HeroLanding } from '@/components/ui/hero/landing-hero';
 import { Blog } from '@/components/content/blog';
 import { TechStack } from '@/components/content/tech-stack';
 import { Footer } from '@/components/footer';
+import { Contact } from '@/components/content/contact';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <TechStack className="mt-20" />
         <Journey />
         <Blog className="mt-20" />
+        <Contact className="mt-20" />
       </section>
       <Footer />
     </>
