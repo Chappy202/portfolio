@@ -1,6 +1,7 @@
 import { Journey } from '@/components/content/journey';
 import { Projects } from '@/components/content/projects';
 import { HeroLanding } from '@/components/ui/hero/landing-hero';
+import { Blog } from '@/components/content/blog';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <HeroLanding />
         <Projects />
         <Journey />
+        <Blog className="mt-20" />
       </section>
     </>
   );
