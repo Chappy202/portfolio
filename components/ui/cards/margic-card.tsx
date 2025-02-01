@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect } from 'react';
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue } from 'motion/react';
 import clsx from 'clsx';
 
 export interface MagicCardProps extends React.HTMLAttributes<HTMLDivElement> {

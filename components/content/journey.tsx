@@ -6,6 +6,8 @@ import Link from 'next/link';
 
 import { Timeline } from '../ui/timeline/timeline';
 
+import { cn } from '@/lib/utils';
+
 interface JourneyProps {
   className?: string;
   style?: React.CSSProperties;
@@ -16,7 +18,7 @@ export const Journey: FC<JourneyProps> = ({ className }) => {
     {
       title: '2024',
       content: (
-        <div>
+        <div className={cn(className)}>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Starting 2024 I got placed on a new project at Standard Bank where I formed part of a
             payments related team that deals with industry related payment types such as the new{' '}

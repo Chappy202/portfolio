@@ -1,6 +1,6 @@
 'use client';
-import React, { useEffect, useRef, useState, createContext, useContext } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useRef, useState, createContext, useContext, type JSX } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import Image, { ImageProps } from 'next/image';
 import { MoveLeft, MoveRight, X } from 'lucide-react';
 import clsx from 'clsx';
@@ -155,7 +155,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
