@@ -71,6 +71,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true });
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
+    // Log error to server logs
+    // eslint-disable-next-line no-console
+    console.error(error);
+
     return NextResponse.json({ error: 'Failed to send message' }, { status: 500 });
   }
 }
