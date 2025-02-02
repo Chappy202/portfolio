@@ -3,9 +3,11 @@
 import { Form } from '@heroui/form';
 import { Input, Textarea } from '@heroui/input';
 import { Button } from '@heroui/button';
+import { Alert } from '@heroui/alert';
 import { useState, useRef } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import { RadioGroup, Radio } from "@heroui/radio";
+import { RadioGroup, Radio } from '@heroui/radio';
+
 import { cn } from '@/lib/utils';
 
 interface ContactFormProps {
@@ -16,28 +18,44 @@ interface ContactFormProps {
 export function ContactForm({ className, onSuccess }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isCaptchaLoading, setIsCaptchaLoading] = useState(true);
   const captchaRef = useRef<HCaptcha>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+
     setError(null);
-    
+    setShowSuccess(false);
+
     if (!captchaToken) {
       setError('Please complete the captcha');
+
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
-      const formData = new FormData(e.currentTarget);
+      const formData = new FormData(form);
       const data = Object.fromEntries(formData);
-      
+
+      // Add email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(data.email as string)) {
+        setError('Please enter a valid email address');
+        setIsSubmitting(false);
+
+        return;
+      }
+
       // Add honeypot check
       if (data._gotcha) {
         console.log('Bot detected');
+
         return;
       }
 
@@ -54,15 +72,19 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
 
       if (!response.ok) {
         const errorData = await response.json();
+
         throw new Error(errorData.error || 'Failed to send message');
       }
-      
-      // Reset form
-      e.currentTarget.reset();
+
+      // Reset form and show success
+      form.reset();
       setCaptchaToken(null);
       captchaRef.current?.resetCaptcha();
-      
-      // Show success message
+      setShowSuccess(true);
+
+      // Hide success message after 5 seconds
+      setTimeout(() => setShowSuccess(false), 5000);
+
       onSuccess?.();
     } catch (error) {
       console.error('Failed to send message:', error);
@@ -77,11 +99,18 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
   };
 
   return (
-    <Form 
-      className={cn("w-full", className)}
-      onSubmit={handleSubmit}
-      validationBehavior="native"
-    >
+    <Form className={cn('w-full', className)} validationBehavior="native" onSubmit={handleSubmit}>
+      {showSuccess && (
+        <Alert
+          className="mb-6"
+          color="success"
+          description="Your message has been sent successfully. We'll get back to you soon!"
+          title="Message Sent"
+          variant="faded"
+          onClose={() => setShowSuccess(false)}
+        />
+      )}
+
       {/* Honeypot field */}
       <input
         className="absolute -left-[9999px] -top-[9999px]"
@@ -94,29 +123,29 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
         <RadioGroup
           isRequired
           classNames={{
-            label: "text-neutral-700 dark:text-neutral-300",
+            label: 'text-neutral-700 dark:text-neutral-300',
           }}
+          color="default"
+          defaultValue="project"
           label="Reason for Contact"
           name="contactReason"
           orientation="horizontal"
-          color='default'
-          defaultValue="project"
         >
           <Radio
-            value="project"
             classNames={{
-              base: "inline-flex rounded-xl m-0 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border-neutral-200 dark:border-neutral-800 data-[selected=true]:border-primary",
-              label: "text-neutral-700 dark:text-neutral-300",
+              base: 'inline-flex rounded-xl m-0 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border-neutral-200 dark:border-neutral-800 data-[selected=true]:border-primary',
+              label: 'text-neutral-700 dark:text-neutral-300',
             }}
+            value="project"
           >
             Project Inquiry
           </Radio>
           <Radio
-            value="question"
             classNames={{
-              base: "inline-flex rounded-xl m-0 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border-neutral-200 dark:border-neutral-800 data-[selected=true]:border-primary",
-              label: "text-neutral-700 dark:text-neutral-300",
+              base: 'inline-flex rounded-xl m-0 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border-neutral-200 dark:border-neutral-800 data-[selected=true]:border-primary',
+              label: 'text-neutral-700 dark:text-neutral-300',
             }}
+            value="question"
           >
             General Question
           </Radio>
@@ -125,8 +154,8 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
         <Input
           isRequired
           classNames={{
-            label: "text-neutral-700 dark:text-neutral-300",
-            input: "bg-neutral-100 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800",
+            label: 'text-neutral-700 dark:text-neutral-300',
+            input: 'bg-neutral-100 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800',
           }}
           label="Name"
           labelPlacement="outside"
@@ -140,8 +169,8 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
         <Input
           isRequired
           classNames={{
-            label: "text-neutral-700 dark:text-neutral-300",
-            input: "bg-neutral-100 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800",
+            label: 'text-neutral-700 dark:text-neutral-300',
+            input: 'bg-neutral-100 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800',
           }}
           label="Email"
           labelPlacement="outside"
@@ -155,8 +184,8 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
         <Textarea
           isRequired
           classNames={{
-            label: "text-neutral-700 dark:text-neutral-300",
-            input: "bg-neutral-100 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800",
+            label: 'text-neutral-700 dark:text-neutral-300',
+            input: 'bg-neutral-100 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800',
           }}
           label="Message"
           labelPlacement="outside"
@@ -166,11 +195,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
           variant="bordered"
         />
 
-        {error && (
-          <div className="text-red-500 text-sm">
-            {error}
-          </div>
-        )}
+        {error && <div className="text-red-500 text-sm">{error}</div>}
 
         <div className="w-full">
           {isCaptchaLoading && (
@@ -181,23 +206,23 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
           <HCaptcha
             ref={captchaRef}
             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
-            onVerify={handleVerify}
+            theme="dark"
             onExpire={() => setCaptchaToken(null)}
             onLoad={() => setIsCaptchaLoading(false)}
-            theme="dark"
+            onVerify={handleVerify}
           />
         </div>
 
         <Button
+          isDisabled={!captchaToken || isSubmitting}
           isLoading={isSubmitting}
           radius="md"
           size="md"
           type="submit"
-          isDisabled={!captchaToken || isSubmitting}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
       </div>
     </Form>
   );
-} 
+}
