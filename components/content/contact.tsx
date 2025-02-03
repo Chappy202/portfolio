@@ -2,11 +2,11 @@
 
 import { Link } from '@heroui/link';
 import { memo } from 'react';
-import { Mail, MapPin, Linkedin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 import { ContactForm } from '../ui/contact/contact-form';
 import { FadeInSection } from '../fade-in-section';
-import { GithubIcon, UnsplashIcon } from '../icons';
+import { GithubIcon, LinkedInIcon, UnsplashIcon } from '../icons';
 
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
@@ -59,7 +59,7 @@ const ContactInfo = () => (
           className="text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
           href={siteConfig.links.linkedin}
         >
-          <Linkedin className="w-5 h-5" />
+          <LinkedInIcon className="w-5 h-5" />
         </Link>
         <Link
           isExternal
