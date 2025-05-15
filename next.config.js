@@ -14,6 +14,11 @@ const nextConfig = {
       },
     ],
   },
-};
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  reactStrictMode: true,
+  experimental: {
+    mdxRs: true,
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

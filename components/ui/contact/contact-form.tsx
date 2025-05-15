@@ -203,14 +203,14 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
               Loading captcha...
             </div>
           )}
-          <HCaptcha
+          {/* <HCaptcha
             ref={captchaRef}
             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
             theme="dark"
             onExpire={() => setCaptchaToken(null)}
             onLoad={() => setIsCaptchaLoading(false)}
             onVerify={handleVerify}
-          />
+          /> */}
         </div>
 
         <Button
