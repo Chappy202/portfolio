@@ -1,0 +1,120 @@
+---
+title: FB Cranes Mobile Inspection App
+description: A mobile companion app for FB Cranes' inspection system, featuring NFC scanning, serial number search, and real-time inspection data access built with Expo and NativeWind.
+coverImage: /assets/projects/fbcranes-inspection-app/nfc-scan.png
+tags: ["React Native", "Expo", "NativeWind", "NFC", "Mobile", "TypeScript"]
+publishedAt: "2024-03-26"
+featured: true
+---
+
+# FB Cranes Mobile Inspection App
+
+A powerful mobile companion application for FB Cranes inspection system, enabling field technicians and clients to access equipment inspection data through NFC scanning and serial number search.
+<div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 my-6">
+  <a href="/projects/fbcranes-inspection-manager" target="_blank" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors">
+    <span>View Web Version</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+  </a>
+</div>
+
+
+## Project Overview
+
+This mobile application extends FB Cranes' inspection management system to the field:
+
+- **NFC Scanning**: Quick access to equipment data via NFC tags
+- **Serial Search**: Efficient equipment lookup by serial number
+- **Real-time Data**: Instant access to latest inspection records
+- **Offline Support**: Functionality maintained without connectivity
+- **Cross-platform**: iOS and Android support
+
+## Key Features
+
+### NFC Tag Scanning
+Quick equipment identification through NFC technology
+
+![NFC Scanning Interface](/assets/projects/fbcranes-inspection-app/nfc-scan.png)
+
+### Serial Number Search
+Efficient equipment lookup using serial numbers
+
+![Serial Number Search](/assets/projects/fbcranes-inspection-app/serial-search.png)
+
+### Inspection Details
+Comprehensive view of inspection data and history
+
+![Inspection Details](/assets/projects/fbcranes-inspection-app/inspection.png)
+
+### No Results Handling
+User-friendly feedback for unsuccessful searches
+
+![No Results Found](/assets/projects/fbcranes-inspection-app/no-results.png)
+
+## Technical Implementation
+
+### Mobile Architecture
+- **Expo**: Cross-platform development framework
+- **NativeWind**: Tailwind CSS for React Native
+- **TypeScript**: Type-safe development
+- **React Navigation**: Seamless navigation
+- **Expo Router**: File-based routing
+
+### NFC Integration
+- **React Native NFC**: Native NFC capabilities
+- **Tag Reading**: NDEF message parsing
+- **Error Handling**: Robust NFC error management
+- **Platform Support**: iOS and Android compatibility
+- **Background Scanning**: Efficient tag detection
+
+### Data Management
+- **React Query**: Efficient data fetching
+- **Offline Storage**: AsyncStorage integration
+- **State Management**: Zustand for global state
+- **Data Sync**: Background synchronization
+- **Caching**: Smart data caching
+
+### UI/UX Features
+- **NativeWind**: Tailwind-style styling
+- **Native Components**: Platform-specific design
+- **Animations**: React Native Reanimated
+- **Haptic Feedback**: Enhanced user interaction
+- **Dark Mode**: Automatic theme switching
+
+### API Integration
+- **REST Client**: Axios integration
+- **WebSocket**: Real-time updates
+- **JWT Auth**: Secure authentication
+- **Request Caching**: Optimized API calls
+- **Error Handling**: Graceful failure recovery
+
+## Development Process
+
+### Architecture Planning
+1. Mobile app architecture design
+2. NFC integration strategy
+3. Offline capability planning
+4. UI/UX design system
+5. API integration planning
+
+### Implementation Strategy
+1. Core app structure
+2. NFC functionality
+3. Search capabilities
+4. Offline support
+5. UI/UX refinement
+
+### Quality Assurance
+1. Cross-platform testing
+2. NFC reliability testing
+3. Offline functionality
+4. Performance optimization
+5. User acceptance testing
+
+## Impact
+
+The mobile app has enhanced FB Cranes' field operations:
+- Instant equipment identification
+- Reduced inspection lookup time
+- Improved client satisfaction
+- Enhanced data accessibility
+- Better field technician efficiency
